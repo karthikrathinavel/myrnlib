@@ -21,6 +21,26 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
+        <intent-filter android:autoVerify="true">
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data
+            android:host="open"
+            android:scheme="NewlibExample" />
+        </intent-filter>
       </activity>
+      <meta-data
+        android:name="resulticks.default_notification_color"
+        android:resource="@color/bootsplash_background" />
+      <meta-data
+        android:name="resulticks.key"
+        android:value="api_key_b78db6b3-9462-4132-a4d3-894db10b3782" />
+      <meta-data
+        android:name="resulticks.default_notification_icon"
+        android:resource="@drawable/rn_edit_text_material" />
+      <meta-data
+        android:name="resulticks.default_notification_icon_transparent"
+        android:resource="@drawable/rn_edit_text_material"/>
     </application>
 </manifest>

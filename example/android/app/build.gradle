@@ -1,5 +1,7 @@
-apply plugin: "com.android.application"
-
+plugins {
+  id 'com.android.application'
+  id 'com.google.gms.google-services'
+}
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
 
@@ -249,6 +251,8 @@ android {
 }
 
 dependencies {
+  implementation 'io.resu:ReAndroidSDK_9a9ec5d2_f860_43e3_a439_9c8450695551:-SNAPSHOT'
+  implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     //noinspection GradleDynamicVersion
