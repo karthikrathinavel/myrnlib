@@ -23,6 +23,7 @@ def isNewArchitectureEnabled() {
 }
 
 apply plugin: "com.android.library"
+apply plugin: 'maven-publish'
 
 if (isNewArchitectureEnabled()) {
   apply plugin: "com.facebook.react"
@@ -82,3 +83,30 @@ if (isNewArchitectureEnabled()) {
     codegenJavaPackageName = "com.newlib"
   }
 }
+publishing {
+  publications {
+    aar(MavenPublication) {
+      groupId = "com.example"
+      artifactId = "newlib"
+      version = "1.0.0"
+
+      artifact("$buildDir/outputs/aar/samplernlibnew1-release.aar")
+    }
+  }
+}
+
+//publishing {
+//  publications {
+//    libraryVariants.all { variant ->
+//      def baseName = variant.baseName
+//      def variantName = variant.name
+//      task("generate${variantName.capitalize()}Metadata", type: GenerateLibraryMetadata) {
+//        groupId = "com.example"
+//        artifactId = "mylibrary"
+//        version = "1.0"
+//        variant = variant
+//        artifact("$buildDir/outputs/aar/${baseName}-release.aar")
+//      }
+//    }
+//  }
+//}
